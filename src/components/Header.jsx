@@ -16,7 +16,7 @@ const Header = () => {
                 <button>Search</button>
             </div>
         </div>
-        <div>
+        <div className='image-container'>
             <img src={mainHeaderImage} alt=" Veggie Soup" className='main_img'/>
         </div>
     </header>
