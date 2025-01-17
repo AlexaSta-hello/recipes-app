@@ -16,13 +16,40 @@
   /* background-color: rgb(240,248,246); */
   margin: 0 auto;
   min-height: 100vh;
-  padding: 0 5%;
 }
 
 .main_container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 75px 0
+  padding: 75px 5%
+}
+
+/* NAVIGATION */
+nav {
+  background-color: var(--green1);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.32);
+  padding: 20px;
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.active-link {
+  color: var(--green3)
 }
 
 /* HEADER */
@@ -153,10 +180,9 @@
 }
 
 .card .tag {
-  background-color: var(--green3);
+  background-color: var(--orange1);
   padding: 4px 8px;
-  color: white;
-  font-weight: bold;
+  color: var(--green3);
   border-radius: 30px;
   font-size: 13px;
 }
@@ -299,18 +325,6 @@
   padding: 50px 0
 }
 
-nav {
-  background-color: rgb(35, 104, 35);
-  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.32);
-  padding: 20px
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  margin-right: 15px;
-}
 
 .nutritional-facts-container {
   display: flex;
