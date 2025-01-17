@@ -1,22 +1,21 @@
 import './App.css'
-import Header from './scenes/Header'
-import Card from './scenes/Card'
+import { Outlet } from 'react-router-dom';
 
-function App() {
 
+function App () {
   return (
     <div className="App">
       <main className="main_container">
-        <section>
-          <Header />
-        </section>
-        <section className="cards">
-          <Card />
-        </section>
+        
+        <Outlet />
         
       </main>
-    </div>
-  )
-}
+  </div>
+      
+    
+   
+  );
+};
+
 
 export default App
