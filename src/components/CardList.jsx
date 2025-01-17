@@ -4,7 +4,7 @@ import cashewCakeImage from "../assets/cashew-cake.jpg"
 import califlowerDream from "../assets/califlower-dream.jpg";
 import chiaBowl from "../assets/chia-bowl.jpg";
 
-const recipes = [ 
+export const recipes = [ 
     {
     id: 1,
     name: "Poke Bowls",

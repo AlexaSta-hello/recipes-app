@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import AboutPage from './pages/AboutPage'; 
 import HomePage from './pages/HomePage';
+import RecipePage from './pages/RecipePage';
 
 // Definiere die Routen
 const router = createBrowserRouter([
@@ -13,12 +14,16 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/", // Child Route 1: Startseite
+        path: "/", 
         element: <HomePage />,
       },
       {
-        path: "/about", // Child Route 2: About-Seite
+        path: "/about", 
         element: <AboutPage />,
+      },
+      {
+        path: "/recipe/:id", 
+        element: <RecipePage />,
       },
     ],
   },
