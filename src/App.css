@@ -74,13 +74,6 @@ nav a {
   line-height: 30px;
 }
 
-.loading-container {
-  display: flex;
-  justify-content: center;
-  padding: 80px 0;
-}
-
-
 .main_img {
   display: none;
 }
@@ -164,7 +157,6 @@ nav a {
   height: 100%;
 }
 
-
 .card-content {
   padding: 20px 15px;
 }
@@ -189,6 +181,12 @@ nav a {
 
 .time-text {
   color: var(--green3)
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
 }
 
 .not-found-container {

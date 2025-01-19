@@ -1,5 +1,20 @@
 import Card from "./Card"
-import pokeBowlImage from "../assets/poke-bowl.jpg";
+
+const CardList = ({recipes}) => {
+  return (
+    <section className="cards">
+      
+        {recipes.map((recipe) => (
+            <Card key={recipe.id} recipe={recipe}/>
+        ))}
+        
+    </section>
+  )
+}
+
+export default CardList
+
+/*import pokeBowlImage from "../assets/poke-bowl.jpg";
 import cashewCakeImage from "../assets/cashew-cake.jpg"
 import califlowerDream from "../assets/califlower-dream.jpg";
 import chiaBowl from "../assets/chia-bowl.jpg";
@@ -34,19 +49,5 @@ export const recipes = [
     numberOfMinutes: 10
     }
   
-];
+]; */
 
-
-const CardList = () => {
-  return (
-    <section className="cards">
-      
-        {recipes.map((recipe) => (
-            <Card key={recipe.id} recipe={recipe}/>
-        ))}
-        
-    </section>
-  )
-}
-
-export default CardList
