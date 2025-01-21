@@ -7,6 +7,7 @@ const options = {
   params: {
     from: '0',
     size: '20',
+    tags: 'vegan'
   },
   headers: {
     'x-rapidapi-key': 'ce1184107cmsh030389028d9506cp15736bjsn40b3506153ac',
@@ -17,24 +18,28 @@ const options = {
 const useFetchRecipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState('');
 
     useEffect(() => {
       fetchRecipes();
     }, [])
   
     const fetchRecipes = async () => {
-      setLoading(true)
+      setLoading(true);
+      setRecipes([]);
+      setError('');
       try {
         const response = await axios.request(options);
         setRecipes(response.data.results);
         setLoading(false)
       } catch (error) {
-        console.error(error);
+        console.log(error);
+        setError(error.message);
         setLoading(false)
       }
     };
 
-    return [recipes, loading]
+    return [recipes, loading, error]
 }
 
 export default useFetchRecipes

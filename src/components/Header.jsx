@@ -5,7 +5,7 @@ const Header = () => {
     <header className="main_header">
         <div className="text-container">
             <h1 className="header-title">
-                Look for <span>Healthy</span> Food
+                Look for <span>vegan</span> Food
             </h1>
             <p className="header-description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus iure 
