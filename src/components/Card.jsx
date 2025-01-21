@@ -20,7 +20,7 @@ const Card = ({ recipe }) => {
         <h3>{name}</h3>
         <div className="card-info">
           <div className="tag">
-            {topics.length > 0 ? <p>{topics[0].name}</p> : null}
+            {topics ? <p>{topics[0].name}</p> : ""}
           </div>
           {cook_time_minutes ? <div className="time-text">{cook_time_minutes} min</div> : null}
         </div>

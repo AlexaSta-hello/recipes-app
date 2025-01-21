@@ -19,17 +19,18 @@ const useFetchRecipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
-
-    useEffect(() => {
-      fetchRecipes();
-    }, [])
   
-    const fetchRecipes = async () => {
+    const fetchRecipes = async (searchTerm) => {
       setLoading(true);
       setRecipes([]);
       setError('');
+      
       try {
-        const response = await axios.request(options);
+        const reqOptions = {...options}
+        if(searchTerm) {
+          reqOptions.params.q = searchTerm
+        }
+        const response = await axios.request(reqOptions);
         setRecipes(response.data.results);
         setLoading(false)
       } catch (error) {
@@ -39,7 +40,7 @@ const useFetchRecipes = () => {
       }
     };
 
-    return [recipes, loading, error]
+    return [fetchRecipes, { data: recipes, loading, error }]
 }
 
 export default useFetchRecipes
