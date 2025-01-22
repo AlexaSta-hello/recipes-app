@@ -9,13 +9,13 @@ const Ingredients = () => {
       <div className="recipe-info-header">
         <h3>INGREDIENTS</h3>
         <Link to={`/recipe/${id}/instructions`} className="recipe-info-link">
-          <h3>Instruction</h3>
+          <h3>INSTRUCTIONS</h3>
         </Link>
       </div>
 
       {ingredients && ingredients.length > 0 ? (
         ingredients.map(({ raw_text, position }) => (
-          <div className="recipe-info-content-container" key={position}>
+          <div className="recipe-info-content-container ingredients" key={position}>
             <p className="recipe-text">{raw_text}</p>
           </div>
         ))
