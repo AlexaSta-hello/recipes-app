@@ -7,7 +7,7 @@ const Card = ({ recipe }) => {
   const navigate = useNavigate();
   
   const navigateToRecipePage = () => {
-    navigate(`/recipe/${id}`);
+    navigate(`/recipe/${id}/instructions`);
   };
 
   return (
@@ -20,7 +20,7 @@ const Card = ({ recipe }) => {
         <h3>{name}</h3>
         <div className="card-info">
           <div className="tag">
-            {topics ? <p>{topics[0].name}</p> : ""}
+            {topics ? <p>{topics[1].name}</p> : ""}
           </div>
           {cook_time_minutes ? <div className="time-text">{cook_time_minutes} min</div> : null}
         </div>

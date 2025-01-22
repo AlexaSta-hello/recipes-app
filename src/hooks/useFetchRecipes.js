@@ -1,5 +1,5 @@
 import axios from 'axios'; // npm install axios
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const options = {
   method: 'GET',
@@ -31,6 +31,7 @@ const useFetchRecipes = () => {
           reqOptions.params.q = searchTerm
         }
         const response = await axios.request(reqOptions);
+        console.log(response)
         setRecipes(response.data.results);
         setLoading(false)
       } catch (error) {

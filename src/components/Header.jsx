@@ -1,12 +1,20 @@
 import { useState } from 'react'
 import mainHeaderImage from '../assets/main-header.png'
+import { useSearchParams } from 'react-router-dom'; // Adding Query Params
 
 const Header = ({handleSearch}) => { // props-Objekt erhält Funktion von Elterkomponente HomePage und destrukturiert sie. Hier wird sie übergeben: <Header handleSearch={handleSearch} />
 
     const [searchTerm, setSearchTerm] = useState(''); // lokales State für Nutzereingabe
+    const [searchParams, setSearchParams] = useSearchParams()
+
 
     const handleClick = () => {
         handleSearch(searchTerm); // Übergibt Suchbegriff an Elternkomponente
+        if(searchTerm){
+            setSearchParams({
+                search: searchTerm,
+            })
+        }
         setSearchTerm(""); 
     } 
 
@@ -17,8 +25,9 @@ const Header = ({handleSearch}) => { // props-Objekt erhält Funktion von Elterk
                     Look for <span>vegan</span> Food
                 </h1>
                 <p className="header-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus iure 
-                    ipsum soluta voluptatum ipsam veritatis asperiores deserunt ratione vel? Hic.
+                    Explore a world of delicious, plant-based dishes with thousands of recipes at your 
+                    fingertips. From sweet treats to savory meals, our app offers a wide variety of 
+                    vegan options to suit every taste. 
                 </p>
                 <div className="header-input-container">
                     <input 
