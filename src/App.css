@@ -13,19 +13,21 @@
 }
 
 .App {
-  /* background-color: rgb(240,248,246); */
-  margin: 0 auto;
-  min-height: 100vh;
+  margin: auto;
+  
 }
 
 p, a, h3, .recipe-header h1 {
   color: #333
 }
 
-.main_container {
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: 1350px;
-  margin: 0 auto;
-  padding: 75px 5%
+  margin: auto;
+  padding: 50px 5%
 }
 
 /* NAVIGATION */
@@ -45,7 +47,6 @@ nav ul {
 
 nav li {
   list-style: none;
-  margin-right: 25px;
 }
 
 nav a {
@@ -61,16 +62,12 @@ nav a {
 
 /* HEADER */
 
-.main_header {
-  display: flex;
-  justify-content: space-between;
-  gap: 25px;
-}
+ 
 
 .header-title {
   color: var(--orange1);
   font-weight: 800;
-  font-size: 60px
+  font-size: 60px;
 }
 
 .header-title span {
@@ -79,8 +76,8 @@ nav a {
 }
 
 .header-description {
-  margin-top: 30px;
-  line-height: 30px;
+  margin-top: 20px;
+  line-height: 28px;
 }
 
 .header-description p {
@@ -123,8 +120,27 @@ nav a {
   transition: 0.2s;
 }
 
+@media only screen and (min-width: 768px) {
+  .header-description {
+    margin-top: 30px;
+  }
+
+  .main-container {
+    padding: 75px 5%
+  }
+}
+
 @media only screen and (min-width: 968px) {
   
+  
+  .main_header {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+  }
+
+  
+
   .text-container {
     margin-right: 30px;
     width: 50%;
@@ -144,14 +160,17 @@ nav a {
 /* CARDS */
 
 .cards {
+  width: 100%;
+  max-width: 1350px;
   margin-top: 75px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .card {
-  width: 255px;
+  width: 100%;
+  max-width: 300px;
   border-radius: 20px;
   overflow: hidden;
   background-color: white;
@@ -196,6 +215,15 @@ nav a {
 
 .time-text {
   color: var(--green3)
+}
+
+@media only screen and (min-width: 968px) {
+  
+  .card {
+    max-width: 255px;
+   
+  }
+ 
 }
 
 /* loading and error */
@@ -305,6 +333,10 @@ RECIPE PAGE
   margin-bottom: 2em;
 }
 
+.recipe-info-header h3 {
+  font-size: 16px;
+}
+
 .recipe-info-content-container {
   display: flex;
   padding: 15px 0;
@@ -344,6 +376,14 @@ RECIPE PAGE
 
 .error-page {
   padding: 50px 0
+}
+
+@media only screen and (min-width: 768px) {
+  
+  .recipe-info-header h3 {
+    font-size: 20px;
+  }
+ 
 }
 
 @media only screen and (min-width: 1100px) {
